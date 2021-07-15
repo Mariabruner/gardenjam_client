@@ -24,6 +24,20 @@
   color: white;
 }
 
+.footer-new{
+  position: fixed;
+  width: 100%;
+  background-color: #545C13;
+  margin-top: 1em;
+  padding-top: 10px;
+  font-size: 12px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+}
+
+
 .App-link {
   color: #61dafb;
 }
