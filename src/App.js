@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from 'react'
-import Sitebar from './home/Navbar';
+import Sitebar from './components/Navbar';
 import Auth from './auth/Auth';
-import HomePage from './home/Home'
+import HomePage from './components/Home'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
