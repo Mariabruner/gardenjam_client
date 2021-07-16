@@ -14,7 +14,7 @@ const Sitebar = (props) => {
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='m1-auto' navbar>
                    <NavItem>
-                        <NavLink href="#">LINK</NavLink>
+                        <NavLink href="HOME">Home</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="#">LINK</NavLink>

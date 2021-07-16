@@ -36,22 +36,12 @@ const protectedViews = () => {
 }
 
   return(
-<<<<<<< HEAD
     <div className='App'>
-      <Router>
-      </Router>
-      develop
+      <Sitebar clickLogout={clearToken}/>
+      {protectedViews()}
       <Footer />
     </div>
   );
-};
-=======
-    <div>
-      <Sitebar clickLogout={clearToken}/>
-      {protectedViews()}
-    </div>
-  );
 }
->>>>>>> 775b95586f47d5361df23230bbcb0d2215315b0b
 
 export default App;
