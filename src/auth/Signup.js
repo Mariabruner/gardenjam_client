@@ -1,4 +1,5 @@
 
+import { findByLabelText } from '@testing-library/react';
 import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';
 
@@ -17,8 +18,17 @@ const Signup = (props) => {
     const formWrapper = {
         border: '1px solid black',
         borderRadius: '1em',
-        padding: '10px'
+        padding: '10px',
+        backgroundColor: '#545C13',
+        color: 'white',
+        textAlign: 'center',
+     
     }
+
+    const feedBackStyle ={
+        color: 'black'
+    }
+ 
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -31,6 +41,13 @@ const Signup = (props) => {
         }).then(
             (response) => response.json()
         ).then((data) => {
+            console.log(data)
+            if (data.message === "Username already in use" ){
+                alert(data.message)
+            }
+            if (data.message === "Failed to register user" ){
+                alert(data.message)
+            }
             props.updateToken(data.sessionToken)
         })
     }
@@ -40,7 +57,7 @@ const Signup = (props) => {
             <h1>Sign Up</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor="username">Username</Label>
+                    <Label htmlFor="username" >Username</Label>
                     <Input valid={usernameValid} invalid={!usernameValid} onChange={(e) => {
                         setUsername(e.target.value)
                         if (e.target.value.length >= 4 && (e.target.value.includes ("@") || e.target.value.includes ("#") || e.target.value.includes ("$") || e.target.value.includes ("!") || e.target.value.includes ("%") || e.target.value.includes ("^") || e.target.value.includes ("*") || e.target.value.includes ("&")))
@@ -52,7 +69,7 @@ const Signup = (props) => {
 
 
                     }} name="username" value={username} />
-                    <FormFeedback invalid>
+                    <FormFeedback style={feedBackStyle} invalid>
                         {'Username must be at least 4 characters and include a special character (@, #, $, %, ^, &, *, !)'}
                     </FormFeedback>
 
@@ -72,8 +89,9 @@ const Signup = (props) => {
                             setConfirmPasswordValid(true);
                         }
 
-                    }} name="password" value={password} />
-                    <FormFeedback invalid>
+                    }} name="password" type="password"
+                    value={password} />
+                    <FormFeedback style={feedBackStyle} invalid>
                         {'Password must be at least 5 characters'}
                     </FormFeedback>
                 </FormGroup>
@@ -88,8 +106,8 @@ const Signup = (props) => {
                         } else {
                             setConfirmPasswordValid(false);
                         }
-                    }} name="confirmPassword" value={confirmPassword} /> 
-                    { <FormFeedback>
+                    }} name="confirmPassword" type="password" value={confirmPassword} /> 
+                    { <FormFeedback style={feedBackStyle}>
                         {confirmPassword.length === 0
                             ?
                             'Please confirm your password'
