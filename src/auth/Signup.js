@@ -22,6 +22,7 @@ const Signup = (props) => {
         backgroundColor: '#545C13',
         color: 'white',
         textAlign: 'center',
+        boxShadow: '5px 10px #D6C66C'
      
     }
 
