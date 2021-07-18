@@ -1,12 +1,25 @@
-import React from 'react';
 
+import {Link} from 'react-router-dom'
+import {
+    Button
+} from 'reactstrap'
 
-const HomePage = (props) => {
+const Home = () => {
     return(
-        <div>
-            <h1>Welcome to our site!</h1>
-        </div>
+    <div className='main'>
+        <h1>Home page</h1>
+        <br /> 
+        Welcome to [Our Project Name!]
+        <br />
+        {/* Change buttons to links once we have the components ready */}
+        <br />
+        <br />
+        <Button>Look up National Parks!</Button>
+        <Button>Go to the National Park forum!</Button>
+    </div>
     )
 }
 
-export default HomePage;
+export default Home
+
+

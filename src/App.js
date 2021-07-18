@@ -4,6 +4,7 @@ import Auth from './auth/Auth';
 import HomePage from './components/Home'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
+import Home from './components/Home'
 
 import Footer from './components/Footer'
 import {
@@ -11,12 +12,44 @@ import {
 } from 'react-router-dom';
 
 function App() {
-const [sessionToken, setSessionToken] = useState('');
+  const [sessionToken, setSessionToken] = useState('');
 
-useEffect(() => {
-  if (localStorage.getItem('token')){
-    setSessionToken(localStorage.getItem('token'))
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      setSessionToken(localStorage.getItem('token'))
+    }
+  }, [])
+
+  const updateToken = (newToken) => {
+    localStorage.setItem('token', newToken);
+    setSessionToken(newToken);
+    console.log(sessionToken);
   }
+
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
+
+  const protectedViews = () => {
+    return (sessionToken === localStorage.getItem('token') ? <HomePage token={sessionToken} />
+      : <Auth updateToken={updateToken} />)
+  }
+
+  return (
+    <div className='App'>
+
+      <Router>
+      </Router>
+      
+      <div>
+        <Sitebar clickLogout={clearToken} />
+        {protectedViews()}
+      </div>
+      <Home></Home>
+      <Footer />
+
+
 }, [])
 
 const updateToken = (newToken) => {
