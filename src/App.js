@@ -41,39 +41,15 @@ function App() {
 
       <Router>
       </Router>
-      
+      <Home></Home>
       <div>
         <Sitebar clickLogout={clearToken} />
         {protectedViews()}
       </div>
-      <Home></Home>
+      
       <Footer />
 
 
-}, [])
-
-const updateToken = (newToken) => {
-  localStorage.setItem('token', newToken);
-  setSessionToken(newToken);
-  console.log(sessionToken);
-}
-
-const clearToken = () => {
-  localStorage.clear();
-  setSessionToken('');
-}
-
-const protectedViews = () => {
-  return (sessionToken === localStorage.getItem('token') ? <HomePage token={sessionToken}/>
-  : <Auth updateToken={updateToken}/>)
-}
-
-  return(
-    <div>
-      <Sitebar clickLogout={clearToken}/>
-      {protectedViews()}
-    
-      <Footer />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-
 import { Route, Link, Switch } from 'react-router-dom';
+
 
 import { withRouter } from 'react-router-dom';
 import {Collapse, Navbar, NavLink, NavbarToggler, NavbarBrand, Nav, NavItem, Button} from 'reactstrap';
@@ -16,13 +16,14 @@ const Sitebar = (props) => {
     const navBarBrandStyle = {
         color: 'white'
     }
+
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
         let newIsOpen = !isOpen;
         setIsOpen(newIsOpen);
     }
+
     return (
-        <Navbar color="success" light expand="md">
         <Navbar style={sitebarStyle}  light expand="md">
             <NavbarBrand style={navBarBrandStyle} href="/">Gardenjam</NavbarBrand>
             <NavbarToggler onClick={toggle}/>
