@@ -22,6 +22,8 @@ const Auth = (props) => {
 
     return (
         <Modal isOpen={modal} toggle={toggle} className="auth-container">
+      
+            <ModalHeader toggle={toggle}> Welcome! Please sign up or log in to get started. </ModalHeader>
             <h1 style={headerStyle}> Welcome! Please sign up or log in to get started. </h1>
             <br></br>
             <Row style={authStyle}>

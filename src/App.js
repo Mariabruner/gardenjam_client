@@ -41,12 +41,12 @@ function App() {
 
       <Router>
       </Router>
-      
+      <Home></Home>
       <div>
         <Sitebar clickLogout={clearToken} />
         {protectedViews()}
       </div>
-      <Home></Home>
+      
       <Footer />
 
 
