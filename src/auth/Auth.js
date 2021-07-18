@@ -14,8 +14,20 @@ const Auth = (props) => {
         <Modal isOpen={modal} toggle={toggle} className="auth-container">
       
             <ModalHeader toggle={toggle}> Welcome! Please sign up or log in to get started. </ModalHeader>
+const authStyle = {
+    display: 'flex',
+    justifyContent: 'center'
+}
+const headerStyle = {
+    display: 'flex',
+    justifyContent: 'center'
+}
+    return (
+        <Container className="auth-container" >
+      
+            <h1 style={headerStyle}> Welcome! Please sign up or log in to get started. </h1>
             <br></br>
-            <Row>
+            <Row style={authStyle}>
                 <Col md="4">
                     <Signup onClick={toggle} updateToken={props.updateToken}/>
                 </Col>
