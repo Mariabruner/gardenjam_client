@@ -4,12 +4,20 @@ import Signup from './Signup';
 import Login from './Login';
 
 const Auth = (props) => {
+const authStyle = {
+    display: 'flex',
+    justifyContent: 'center'
+}
+const headerStyle = {
+    display: 'flex',
+    justifyContent: 'center'
+}
     return (
-        <Container className="auth-container">
+        <Container className="auth-container" >
       
-            <h1> Welcome! Please sign up or log in to get started. </h1>
+            <h1 style={headerStyle}> Welcome! Please sign up or log in to get started. </h1>
             <br></br>
-            <Row>
+            <Row style={authStyle}>
                 <Col md="4">
                     <Signup updateToken={props.updateToken}/>
                 </Col>
