@@ -16,13 +16,12 @@ const Signup = (props) => {
   
 
     const formWrapper = {
-        border: '1px solid black',
-        borderRadius: '1em',
-        padding: '10px',
+       
+        padding: '15px',
         backgroundColor: '#545C13',
         color: 'white',
         textAlign: 'center',
-        boxShadow: '5px 10px #D6C66C'
+       
      
     }
 
@@ -123,6 +122,7 @@ const Signup = (props) => {
 
 
          </FormGroup>
+         <br></br>
 
                 <Button type="submit" disabled={usernameValid && passwordValid && confirmPasswordValid ? false : true}>Sign Up</Button>
             </Form>

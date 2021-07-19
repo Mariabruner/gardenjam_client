@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Home from './components/Home'
 
+
 import Footer from './components/Footer'
 import {
   BrowserRouter as Router
@@ -32,21 +33,19 @@ function App() {
   }
 
   const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? <HomePage token={sessionToken} />
+    return (sessionToken === localStorage.getItem('token') ? <Home token={sessionToken} />
       : <Auth updateToken={updateToken} />)
   }
 
   return (
     <div className='App'>
-
-      <Router>
-      </Router>
-      <Home></Home>
-      <div>
+    <div>
         <Sitebar clickLogout={clearToken} />
         {protectedViews()}
-      </div>
       
+
+      </div>
+  
       <Footer />
 
 
