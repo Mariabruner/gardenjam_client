@@ -36,12 +36,13 @@ const protectedViews = () => {
 }
 
   return(
-    <div className='App'>
+    <div>
       <Sitebar clickLogout={clearToken}/>
       {protectedViews()}
+    
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
