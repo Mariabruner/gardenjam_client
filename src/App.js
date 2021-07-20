@@ -5,6 +5,7 @@ import HomePage from './components/Home'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Home from './components/Home'
+import ParksApp from './components/apps/ParksApp'
 
 
 import Footer from './components/Footer'
@@ -42,6 +43,7 @@ function App() {
     <div>
         <Sitebar clickLogout={clearToken} />
         {protectedViews()}
+        <ParksApp></ParksApp>
       
 
       </div>

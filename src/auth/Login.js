@@ -7,8 +7,6 @@ const Login = (props) => {
 
   
 
- 
-
     const formWrapper = {
      
         padding: '15px',
