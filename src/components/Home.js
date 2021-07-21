@@ -9,13 +9,18 @@ const Home = () => {
     <div className='main'>
         <h1>Home page</h1>
         <br /> 
-        Welcome to [Our Project Name!]
-        <br />
-        {/* Change buttons to links once we have the components ready */}
+        <h2>Welcome to [Our Project Name!]</h2>
         <br />
         <br />
-        <Button>Look up National Parks!</Button>
-        <Button>Go to the National Park forum!</Button>
+        You may use this website to search for information about your favorite parks in the "Parks" tab. 
+        <br />
+        Or
+        <br />
+        You may post about your recent trips in our open forum in the "Forum" tab!
+        <br />
+        <br />
+        <br />
+        Happy camping!
     </div>
     )
 }
