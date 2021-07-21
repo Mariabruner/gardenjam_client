@@ -44,7 +44,7 @@ function App() {
         <Sitebar clickLogout={clearToken} />
         {protectedViews()}
         <ParksApp></ParksApp>
-      
+
 
       </div>
   
