@@ -5,6 +5,8 @@ import HomePage from './components/Home'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Home from './components/Home'
+import ParksApp from './components/apps/ParksApp'
+
 
 import Footer from './components/Footer'
 import {
@@ -32,21 +34,20 @@ function App() {
   }
 
   const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? <HomePage token={sessionToken} />
+    return (sessionToken === localStorage.getItem('token') ? <Home token={sessionToken} />
       : <Auth updateToken={updateToken} />)
   }
 
   return (
     <div className='App'>
-
-      <Router>
-      </Router>
-      <Home></Home>
-      <div>
+    <div>
         <Sitebar clickLogout={clearToken} />
         {protectedViews()}
+        <ParksApp></ParksApp>
+
+
       </div>
-      
+  
       <Footer />
 
 

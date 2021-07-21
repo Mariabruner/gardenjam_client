@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';
 
 const Signup = (props) => {
+
+
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -13,23 +16,21 @@ const Signup = (props) => {
     const [passwordValid, setPasswordValid] = useState(false);
     const [confirmPasswordValid, setConfirmPasswordValid] = useState(false);
 
-  
+
 
     const formWrapper = {
-        border: '1px solid black',
-        borderRadius: '1em',
-        padding: '10px',
+
+        padding: '15px',
         backgroundColor: '#545C13',
         color: 'white',
         textAlign: 'center',
-        boxShadow: '5px 10px #D6C66C'
-     
+
+
     }
 
-    const feedBackStyle ={
+    const feedBackStyle = {
         color: 'black'
     }
- 
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -43,10 +44,10 @@ const Signup = (props) => {
             (response) => response.json()
         ).then((data) => {
             console.log(data)
-            if (data.message === "Username already in use" ){
+            if (data.message === "Username already in use") {
                 alert(data.message)
             }
-            if (data.message === "Failed to register user" ){
+            if (data.message === "Failed to register user") {
                 alert(data.message)
             }
             props.updateToken(data.sessionToken)
@@ -61,17 +62,25 @@ const Signup = (props) => {
                     <Label htmlFor="username" >Username</Label>
                     <Input valid={usernameValid} invalid={!usernameValid} onChange={(e) => {
                         setUsername(e.target.value)
-                        if (e.target.value.length >= 4 && (e.target.value.includes ("@") || e.target.value.includes ("#") || e.target.value.includes ("$") || e.target.value.includes ("!") || e.target.value.includes ("%") || e.target.value.includes ("^") || e.target.value.includes ("*") || e.target.value.includes ("&")))
-                             {
+                        const re = /^(?=.*[0-9|!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,}$/
+
+                        if (re.test(e.target.value)) {
                             setUsernameValid(true)
                         } else {
                             setUsernameValid(false)
                         }
 
-
-                    }} name="username" value={username} />
+                        // if (e.target.value.length >= 4 && (e.target.value.includes ("0") || e.target.value.includes("1") || e.target.value.includes ("!") || e.target.value.includes ("%") || e.target.value.includes ("^") || e.target.value.includes ("*") || e.target.value.includes ("&")))
+                        //      {
+                        //     setUsernameValid(true)
+                        // } else {
+                        //     setUsernameValid(false)
+                        // }
+                    }
+                    }
+                        name="username" value={username} />
                     <FormFeedback style={feedBackStyle} invalid>
-                        {'Username must be at least 4 characters and include a special character (@, #, $, %, ^, &, *, !)'}
+                        {'Username must be at least 4 characters and include either a digit or a special character (!, @, #, $, %, ^, &, *)'}
                     </FormFeedback>
 
                 </FormGroup>
@@ -91,7 +100,7 @@ const Signup = (props) => {
                         }
 
                     }} name="password" type="password"
-                    value={password} />
+                        value={password} />
                     <FormFeedback style={feedBackStyle} invalid>
                         {'Password must be at least 5 characters'}
                     </FormFeedback>
@@ -107,8 +116,8 @@ const Signup = (props) => {
                         } else {
                             setConfirmPasswordValid(false);
                         }
-                    }} name="confirmPassword" type="password" value={confirmPassword} /> 
-                    { <FormFeedback style={feedBackStyle}>
+                    }} name="confirmPassword" type="password" value={confirmPassword} />
+                    {<FormFeedback style={feedBackStyle}>
                         {confirmPassword.length === 0
                             ?
                             'Please confirm your password'
@@ -118,11 +127,12 @@ const Signup = (props) => {
                                 'Passwords do not match'
                                 :
                                 null}
-                    </FormFeedback> }
+                    </FormFeedback>}
 
 
 
-         </FormGroup>
+                </FormGroup>
+                <br></br>
 
                 <Button type="submit" disabled={usernameValid && passwordValid && confirmPasswordValid ? false : true}>Sign Up</Button>
             </Form>

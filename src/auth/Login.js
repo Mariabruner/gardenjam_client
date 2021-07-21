@@ -7,17 +7,13 @@ const Login = (props) => {
 
   
 
- 
-
     const formWrapper = {
-        border: '1px solid black',
-        borderRadius: '1em',
-        padding: '10px',
+     
+        padding: '15px',
         backgroundColor: '#545C13',
         color: 'white',
         textAlign: 'center',
-        boxShadow: '5px 10px #D6C66C'      
-    }
+        }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -33,7 +29,7 @@ const Login = (props) => {
         .then ((data) => {
             console.log(data)
          
-            if (data.message != "User successfully logged in!") {
+            if (data.message !== "User successfully logged in!") {
                 alert(data.message)
             } else {
             props.updateToken(data.sessionToken)}
@@ -55,7 +51,8 @@ const Login = (props) => {
                     <Label htmlFor="password">Password</Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" type="password" value={password}/>
                 </FormGroup>
-                <Button type="submit" disabled={password.length !=0 && username.length !=0 ? false : true}>Login</Button>
+                <br></br>
+                <Button type="submit" disabled={password.length !==0 && username.length !==0 ? false : true}>Login</Button>
                     
             </Form>
         </div>
