@@ -33,7 +33,7 @@ const Sitebar = (props) => {
                         <NavLink href="/">Home</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/apps/ParksApp.js">Parks</NavLink>
+                        <NavLink href="/apps/ParkAppDisplay.js">Parks</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="#">LINK</NavLink>
