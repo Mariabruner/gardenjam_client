@@ -34,7 +34,7 @@ function App() {
   }
 
   const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? <Home token={sessionToken} />
+    return (sessionToken === localStorage.getItem('token') ? <Home token={sessionToken} ParksApp token={sessionToken} />
       : <Auth updateToken={updateToken} />)
   }
 
@@ -43,8 +43,8 @@ function App() {
     <div>
         <Sitebar clickLogout={clearToken} />
         {protectedViews()}     
-        <Home></Home>
-        <ParksApp></ParksApp>
+        {/* <Home></Home>
+        <ParksApp></ParksApp> */}
 
 
       </div>

@@ -24,7 +24,7 @@ const Sitebar = (props) => {
     }
 
     return (
-        <Navbar className="navbar" style={sitebarStyle}  light expand="md">
+        <Navbar className="navbar fixed-top" style={sitebarStyle}  light expand="md">
             <NavbarBrand style={navBarBrandStyle} href="/">National Parkopedia</NavbarBrand>
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
