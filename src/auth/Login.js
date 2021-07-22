@@ -29,7 +29,7 @@ const Login = (props) => {
         .then ((data) => {
             console.log(data)
          
-            if (data.message != "User successfully logged in!") {
+            if (data.message !== "User successfully logged in!") {
                 alert(data.message)
             } else {
             props.updateToken(data.sessionToken)}
@@ -52,7 +52,7 @@ const Login = (props) => {
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" type="password" value={password}/>
                 </FormGroup>
                 <br></br>
-                <Button type="submit" disabled={password.length !=0 && username.length !=0 ? false : true}>Login</Button>
+                <Button type="submit" disabled={password.length !==0 && username.length !==0 ? false : true}>Login</Button>
                     
             </Form>
         </div>
