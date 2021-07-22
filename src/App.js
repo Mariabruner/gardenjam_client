@@ -39,15 +39,17 @@ function App() {
 
   return (
     <div className='App'>
-    <div>
+
+      <Router>
         <Sitebar clickLogout={clearToken} />
-        {protectedViews()}     
-        <Home></Home>
-        <ParksApp></ParksApp>
+      </Router>
+
+      {protectedViews()}     
+      {/* <Home></Home> */}
+      {/* <ParksApp></ParksApp> */}
 
 
-      </div>
-  
+
       <Footer />
 
 

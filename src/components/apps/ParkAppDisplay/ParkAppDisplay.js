@@ -18,8 +18,7 @@ const ParkAppDisplay = (props) => {
             </Media>
             {item.description}
           </Media>
-        </Media>,
-        <hr/>
+        </Media>
       )}
     </div>
   )
