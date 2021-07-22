@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.main{
+    background-color: #9D9C75;
+    height: 100vh;
+    color: #321B18;
+}
+
+.header {
+    font-size: 50px;
+    padding-top: 15vh;
+    font-size: 100px;
+    font-family: 'Cabin Sketch', cursive;
+    margin-bottom: 0px;
+}
+
+.info {
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+}

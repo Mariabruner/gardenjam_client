@@ -19,17 +19,17 @@ const Auth = (props) => {
 
     const buttonDiv = {
         display: "flex",
-        justifyContent: 'space-around',
-        margin: '10px',
+        justifyContent: 'center',
+        // margin: '10px',
         backgroundColor: '#545C13',
-        borderRadius: '5px',
+        // borderRadius: '5px',
         color: 'white'
 
     }
 
     const buttonStyle = {
         margin: '5px',
-        backgroundColor: 'white'
+        backgroundColor: '#9D9C75'
     }
 
     const linkStyle = {
@@ -38,13 +38,15 @@ const Auth = (props) => {
     }
 
     const modalStyle = {
-        textAlign: 'center',
+        display: "flex",
+        justifyContent: 'center',
+        backgroundColor: '#9D9C75'
     }
 
     return (
-        <Modal isOpen={modal} toggle={toggle} className="auth-container">
+        <Modal isOpen={modal} toggle={toggle} className="auth-container" backdrop="static">
 
-            <ModalHeader toggle={toggle} style={modalStyle}> Welcome! Please sign up or log in to get started. </ModalHeader>
+            <ModalHeader style={modalStyle}>Welcome! Please sign up or log in to get started.</ModalHeader>
         
 
             <Router>
@@ -56,7 +58,7 @@ const Auth = (props) => {
 
                 <div style={buttonDiv}>
 
-                    <Button style={buttonStyle}><Link style={linkStyle} to='/Signup'>Sign Up</Link></Button>
+                    <Button style={buttonStyle}><Link style={linkStyle} to='/Signup'>Return to Sign-up Form</Link></Button>
                     <Button style={buttonStyle}><Link style={linkStyle} to='/Login'>Already have an account? Log in.</Link></Button>
                 </div>
 
