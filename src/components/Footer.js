@@ -11,7 +11,7 @@ const Footer = () => {
   return(
     <div class="footer-new" style={footerStyle}>
       <Row>
-        <p>&copy; GardenJam - 2021  |  Team 6: Maria, Katherine, Amanda, Justin</p>
+        <p>&copy; National Parkopedia - 2021  |  Team 6: Maria, Katherine, Amanda, Justin</p>
       </Row>
     </div>
   );
