@@ -42,9 +42,7 @@ function App() {
     <div className='App'>
     <div>
         <Sitebar clickLogout={clearToken} />
-        {protectedViews()}
-        {/* <ParksApp></ParksApp> */}      
-        <Home></Home>
+        {protectedViews()}    
       </div>
   
       <Footer />

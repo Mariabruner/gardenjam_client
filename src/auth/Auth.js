@@ -42,9 +42,9 @@ const Auth = (props) => {
     }
 
     return (
-        <Modal isOpen={modal}toggle={toggle} className="auth-container" backdrop="static">
+        <Modal isOpen={modal} toggle={toggle} className="auth-container" backdrop="static">
 
-            <ModalHeader toggle={toggle} style={modalStyle}> Welcome! Please sign up or log in to get started. </ModalHeader>
+            <ModalHeader style={modalStyle}> Welcome! Please sign up or log in to get started. </ModalHeader>
         
 
             <Router>
