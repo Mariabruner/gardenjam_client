@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-
+import './Navbar.css'
 
 import { withRouter } from 'react-router-dom';
 import {Collapse, Navbar, NavLink, NavbarToggler, NavbarBrand, Nav, NavItem, Button} from 'reactstrap';
@@ -24,8 +24,8 @@ const Sitebar = (props) => {
     }
 
     return (
-        <Navbar style={sitebarStyle}  light expand="md">
-            <NavbarBrand style={navBarBrandStyle} href="/">Gardenjam</NavbarBrand>
+        <Navbar className="navbar" style={sitebarStyle}  light expand="md">
+            <NavbarBrand style={navBarBrandStyle} href="/">National Parkopedia</NavbarBrand>
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='m1-auto' navbar>
@@ -36,7 +36,7 @@ const Sitebar = (props) => {
                         <NavLink href="/apps/ParkAppDisplay.js">Parks</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">LINK</NavLink>
+                        <NavLink href="#">Forum</NavLink>
                     </NavItem>
                     <NavItem class="logout">
                         <Button onClick={props.clickLogout}>Logout</Button>
