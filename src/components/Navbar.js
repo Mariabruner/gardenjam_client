@@ -5,6 +5,10 @@ import './Navbar.css'
 import { withRouter } from 'react-router-dom';
 import { Collapse, Navbar, NavLink, NavbarToggler, NavbarBrand, Nav, NavItem, Button } from 'reactstrap';
 
+
+import Home from './Home'
+import ParksApp from './apps/ParksApp';
+
 const Sitebar = (props) => {
 
     const sitebarStyle = {
@@ -44,6 +48,14 @@ const Sitebar = (props) => {
 
             </Collapse>
         </Navbar>
+        <div>
+            <div>
+                <Switch>
+                    <Route exact path="/"><Home /></Route>
+                    <Route exact path="/parks"><ParksApp /></Route>
+                </Switch>
+            </div>
+        </div>
     )
 }
 
