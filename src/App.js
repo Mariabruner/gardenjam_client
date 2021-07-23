@@ -42,11 +42,10 @@ function App() {
 
       <Router>
         <Sitebar clickLogout={clearToken} />
+        {protectedViews()}     
+        {/* <Home></Home>
+        <ParksApp></ParksApp> */}
       </Router>
-
-      {protectedViews()}     
-      {/* <Home></Home> */}
-      {/* <ParksApp></ParksApp> */}
 
 
 
