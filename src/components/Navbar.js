@@ -1,16 +1,15 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import './Navbar.css'
 
 import { withRouter } from 'react-router-dom';
-import {Collapse, Navbar, NavLink, NavbarToggler, NavbarBrand, Nav, NavItem, Button} from 'reactstrap';
-import Home from './Home'
+import { Collapse, Navbar, NavLink, NavbarToggler, NavbarBrand, Nav, NavItem, Button } from 'reactstrap';
 
 const Sitebar = (props) => {
 
-    const sitebarStyle ={
+    const sitebarStyle = {
         backgroundColor: '#545C13',
-       
+
     }
 
     const navBarBrandStyle = {
@@ -24,16 +23,16 @@ const Sitebar = (props) => {
     }
 
     return (
-        <Navbar className="navbar" style={sitebarStyle}  light expand="md">
+        <Navbar className="navbar" style={sitebarStyle} light expand="md">
             <NavbarBrand style={navBarBrandStyle} href="/">National Parkopedia</NavbarBrand>
-            <NavbarToggler onClick={toggle}/>
+            <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='m1-auto' navbar>
-                <NavItem>
+                    <NavItem>
                         <NavLink href="/">Home</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/apps/ParkAppDisplay.js">Parks</NavLink>
+                        <NavLink href="apps/ParkDisplay/ParksApp">Parks</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="#">Forum</NavLink>
@@ -42,6 +41,7 @@ const Sitebar = (props) => {
                         <Button onClick={props.clickLogout}>Logout</Button>
                     </NavItem>
                 </Nav>
+
             </Collapse>
         </Navbar>
     )
