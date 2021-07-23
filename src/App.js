@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from 'react'
 import Sitebar from './components/Navbar';
 import Auth from './auth/Auth';
-import HomePage from './components/Home'
+
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Home from './components/Home'
@@ -34,17 +34,19 @@ function App() {
   }
 
   const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? <Home token={sessionToken} ParksApp token={sessionToken} />
+    return (sessionToken === localStorage.getItem('token') ? <Home token={sessionToken} />
       : <Auth updateToken={updateToken} />)
   }
 
   return (
     <div className='App'>
     <div>
+      <Router>
         <Sitebar clickLogout={clearToken} />
+        </Router>
         {protectedViews()}     
-        {/* <Home></Home>
-        <ParksApp></ParksApp> */}
+        <Home></Home>
+        <ParksApp></ParksApp>
 
 
       </div>
