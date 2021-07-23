@@ -41,7 +41,9 @@ function App() {
   return (
     <div className='App'>
     <div>
+      <Router>
         <Sitebar clickLogout={clearToken} />
+        </Router>
         {protectedViews()}     
         <Home></Home>
         <ParksApp></ParksApp>
