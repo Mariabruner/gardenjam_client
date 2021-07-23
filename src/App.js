@@ -43,8 +43,8 @@ function App() {
     <div>
         <Sitebar clickLogout={clearToken} />
         {protectedViews()}     
-        <Home></Home>
-        <ParksApp></ParksApp>
+        {/* <Home></Home>
+        <ParksApp></ParksApp> */}
 
 
       </div>
