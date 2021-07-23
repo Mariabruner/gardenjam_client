@@ -27,28 +27,27 @@ const Sitebar = (props) => {
     }
 
     return (
-        <Navbar className="navbar" style={sitebarStyle} light expand="md">
-            <NavbarBrand style={navBarBrandStyle} href="/">National Parkopedia</NavbarBrand>
-            <NavbarToggler onClick={toggle} />
-            <Collapse isOpen={isOpen} navbar>
-                <Nav className='m1-auto' navbar>
-                    <NavItem>
-                        <NavLink href="/">Home</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="apps/ParkDisplay/ParksApp">Parks</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="#">Forum</NavLink>
-                    </NavItem>
-                    <NavItem class="logout">
-                        <Button onClick={props.clickLogout}>Logout</Button>
-                    </NavItem>
-                </Nav>
-
-            </Collapse>
-        </Navbar>
         <div>
+            <Navbar className="navbar" style={sitebarStyle} light expand="md">
+                <NavbarBrand style={navBarBrandStyle} href="/">National Parkopedia</NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className='m1-auto' navbar>
+                        <NavItem>
+                            <NavLink><Link to="/">Home</Link></NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/apps/ParkAppDisplay.js"><Link to="/parks">Parks</Link> </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="#">Forum</NavLink>
+                        </NavItem>
+                        <NavItem class="logout">
+                            <Button onClick={props.clickLogout}>Logout</Button>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+            </Navbar>
             <div>
                 <Switch>
                     <Route exact path="/"><Home /></Route>
