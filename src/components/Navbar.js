@@ -27,6 +27,7 @@ const Sitebar = (props) => {
     }
 
     return (
+        <div>
         <Navbar className="navbar" style={sitebarStyle} light expand="md">
             <NavbarBrand style={navBarBrandStyle} href="/">National Parkopedia</NavbarBrand>
             <NavbarToggler onClick={toggle} />
@@ -55,6 +56,7 @@ const Sitebar = (props) => {
                     <Route exact path="/parks"><ParksApp /></Route>
                 </Switch>
             </div>
+        </div>
         </div>
     )
 }

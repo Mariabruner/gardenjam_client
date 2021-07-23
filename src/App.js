@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from 'react'
 import Sitebar from './components/Navbar';
 import Auth from './auth/Auth';
+
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Home from './components/Home'
@@ -39,16 +40,15 @@ function App() {
 
   return (
     <div className='App'>
-
-      <Router>
+    <div>
         <Sitebar clickLogout={clearToken} />
         {protectedViews()}     
-        {/* <Home></Home>
-        <ParksApp></ParksApp> */}
-      </Router>
+        <Home></Home>
+        <ParksApp></ParksApp>
 
 
-
+      </div>
+  
       <Footer />
 
 
