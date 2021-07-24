@@ -77,7 +77,7 @@ const Sitebar = (props) => {
             </Navbar>
             <div>
                 <Switch>
-                    <Route exact path="/"><Home /></Route>
+                    <ProtectedRoute exact path="/"><Home /></ProtectedRoute>
                     <ProtectedRoute exact path="/parks"><ParksApp /></ProtectedRoute>
                     <ProtectedRoute exact path="/forum"><Forum /></ProtectedRoute>
                 </Switch>
