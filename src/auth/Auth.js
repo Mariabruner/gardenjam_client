@@ -58,7 +58,7 @@ const Auth = (props) => {
 
                 <div style={buttonDiv}>
 
-                    <Button style={buttonStyle}><Link style={linkStyle} to='/Signup'>Return to Sign-up Form</Link></Button>
+                    <Button style={buttonStyle}><Link style={linkStyle} to='/Signup'>Sign-up Form</Link></Button>
                     <Button style={buttonStyle}><Link style={linkStyle} to='/Login'>Already have an account? Log in.</Link></Button>
                 </div>
 

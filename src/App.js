@@ -10,7 +10,7 @@ import ParksApp from './components/apps/ParksApp'
 
 import Footer from './components/Footer'
 import {
-  BrowserRouter as Router
+  BrowserRouter as Router, Redirect, withRouter
 } from 'react-router-dom';
 
 function App() {
@@ -25,28 +25,32 @@ function App() {
   const updateToken = (newToken) => {
     localStorage.setItem('token', newToken);
     setSessionToken(newToken);
-    console.log(sessionToken);
+    
   }
 
   const clearToken = () => {
     localStorage.clear();
     setSessionToken('');
+    window.location.href='/home'
+    
+  
   }
 
-  const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? <Home token={sessionToken} />
-      : <Auth updateToken={updateToken} />)
-  }
+  // const protectedViews = () => {
+  //   return (sessionToken === localStorage.getItem('token') ? <Home token={sessionToken} />
+  //     : <Auth updateToken={updateToken} />)
+  // }
 
   return (
     <div className='App'>
     <div>
       <Router>
-        <Sitebar clickLogout={clearToken} />
+        <Sitebar clickLogout={clearToken} /> 
+        
+        {/* {protectedViews()} */}
         </Router>
-        {protectedViews()}     
-        <Home></Home>
-        <ParksApp></ParksApp>
+        {/* <Home></Home>
+        <ParksApp></ParksApp> */}
 
 
       </div>
