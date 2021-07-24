@@ -135,7 +135,7 @@ const Signup = (props) => {
                 </FormGroup>
                 <br></br>
 
-                <Button type="submit" disabled={usernameValid && passwordValid && confirmPasswordValid ? false : true}>Sign Up</Button>
+                <Button type="submit" disabled={usernameValid && passwordValid && confirmPasswordValid ? false : true}>Submit</Button>
             </Form>
         </div>
     )
