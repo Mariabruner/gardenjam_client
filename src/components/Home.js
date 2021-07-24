@@ -7,7 +7,7 @@ import './Home.css'
 
 const Home = () => {
     return(
-    <div className='main'>
+    <div className='main' id="home">
         <h2 className="header">National Parkopedia</h2>
         <br />
         <br />

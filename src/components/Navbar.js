@@ -61,7 +61,7 @@ const Sitebar = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className='m1-auto' navbar>
                         <NavItem>
-                            <NavLink ><Link style={navLinkStyle} to="/home">Home</Link></NavLink>
+                            <NavLink ><Link style={navLinkStyle} to="/">Home</Link></NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/apps/ParkAppDisplay.js"><Link style={navLinkStyle} to="/parks"> Parks</Link> </NavLink>
@@ -77,7 +77,7 @@ const Sitebar = (props) => {
             </Navbar>
             <div>
                 <Switch>
-                    <Route exact path="/home"><Home /></Route>
+                    <Route exact path="/"><Home /></Route>
                     <ProtectedRoute exact path="/parks"><ParksApp /></ProtectedRoute>
                     <ProtectedRoute exact path="/forum"><Forum /></ProtectedRoute>
                 </Switch>
