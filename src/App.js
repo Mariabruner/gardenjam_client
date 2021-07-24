@@ -31,7 +31,7 @@ function App() {
   const clearToken = () => {
     localStorage.clear();
     setSessionToken('');
-    window.location.href='/home'
+    window.location.href='/'
     
   
   }
