@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react'
-import { Container, Row, Col, Modal, ModalHeader, Button } from 'reactstrap';
+import { Container, Row, Col, Modal, ModalHeader, Button, PaginationLink } from 'reactstrap';
 import Signup from './Signup';
 import Login from './Login';
 import {
@@ -29,7 +29,8 @@ const Auth = (props) => {
 
     const buttonStyle = {
         margin: '5px',
-        backgroundColor: '#9D9C75'
+        backgroundColor: '#9D9C75',
+        border: '2px solid white'
     }
 
     const linkStyle = {
@@ -37,16 +38,23 @@ const Auth = (props) => {
         color: 'black'
     }
 
-    const modalStyle = {
+    const headerStyle = {
         display: "flex",
         justifyContent: 'center',
         backgroundColor: '#9D9C75'
     }
 
-    return (
-        <Modal isOpen={modal} toggle={toggle} className="auth-container" backdrop="static">
+    const modalStyle = {
+        backgroundColor: '#9D9C75',
+        border: '2px solid white',
+        borderRadius: '5px'
+    }
 
-            <ModalHeader style={modalStyle}>Welcome! Please sign up or log in to get started.</ModalHeader>
+    return (
+        
+        <Modal style={modalStyle} isOpen={modal} toggle={toggle} className="auth-container" backdrop="static">
+
+            <ModalHeader style={headerStyle}>Welcome! Please sign up or log in to get started.</ModalHeader>
         
 
             <Router>
@@ -61,12 +69,13 @@ const Auth = (props) => {
                     <Button style={buttonStyle}><Link style={linkStyle} to='/Signup'>Sign-up Form</Link></Button>
                     <Button style={buttonStyle}><Link style={linkStyle} to='/Login'>Already have an account? Log in.</Link></Button>
                 </div>
-
+           
 
 
             </Router>
 
         </Modal>
+        
     )
 }
 
