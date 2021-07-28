@@ -22,7 +22,6 @@ const Sitebar = (props) => {
     const updateToken = (newToken) => {
         localStorage.setItem('token', newToken);
         setSessionToken(newToken);
-       
     }
 
     function ProtectedRoute({ children, ...rest }) {

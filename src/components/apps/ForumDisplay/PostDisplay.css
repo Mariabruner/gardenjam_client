@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+.main{
+    margin-bottom: 100px;
+}
+
+.postBox{
+    color: #321B18;
+    background-color: white;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border: 7px solid #545C13;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.title{
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.content{
+    font-size: 25px;
+}
+
+.poster{
+    font-size: 15px;
+}

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+.createPostBox{
+    background-color: #D6C66C;
+    border-radius: 7px;
+    border: 7px solid #545C13;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.inputTitle{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+.inputContent{
+    height: 100px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+
+.titleLabel{
+    margin-top: 20px;
+}
+.contentLabel{
+    margin-top: 30px;
+}
