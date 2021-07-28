@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Media } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css'
 
 const ParkAppDisplay = (props) => {
-  console.log(props)
-
-
   return (
     <div className="parkList" width="50%">
       {props.park.map((item, idx) =>

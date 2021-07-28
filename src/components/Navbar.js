@@ -8,7 +8,7 @@ import { Collapse, Navbar, NavLink, NavbarToggler, NavbarBrand, Nav, NavItem, Bu
 import Auth from '../auth/Auth'
 import Home from './Home'
 import ParksApp from './apps/ParksApp';
-import Forum from './Forum'
+import Forum from './apps/ForumDisplay'
 
 const Sitebar = (props) => {
     const [sessionToken, setSessionToken] = useState('');
