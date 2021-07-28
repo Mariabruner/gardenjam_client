@@ -14,7 +14,7 @@ const EditPost = (props) => {
 
         e.preventDefault()
 
-        fetch(`http://localhost:3000/post/update/${props.postToUpdate.id}`, {
+        fetch(` https://nationalparkopedia.herokuapp.com/post/update/${props.postToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({post: {title: editTitle, content: editContent, comments: comments, postName: props.postToUpdate.postName}}),
             headers: new Headers ({

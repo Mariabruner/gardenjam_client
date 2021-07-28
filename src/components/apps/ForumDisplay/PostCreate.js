@@ -13,7 +13,7 @@ const PostCreate = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3000/post/createPost', {
+        fetch(' https://nationalparkopedia.herokuapp.com/post/createPost', {
             method: 'POST',
             body: JSON.stringify({ post: {title: title, content: content, comments: comments, postName: postName}}),
             headers: new Headers({

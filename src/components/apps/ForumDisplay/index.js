@@ -11,7 +11,7 @@ const ForumDisplay = (props) => {
     const [postToUpdate, setPostToUpdate] = useState({})
 
     const fetcher = async () => {
-        fetch('http://localhost:3000/post/all')
+        fetch(' https://nationalparkopedia.herokuapp.com/post/all')
             .then(res => {
                 if (res.status !== 200) {
                     throw new Error('fetch error');
@@ -62,7 +62,7 @@ const ForumDisplay = (props) => {
         setSessionToken('');
         window.location.href = '/'
     }
-    
+
     return (
         <div>
             <PostCreate fetchPosts={fetcher} sessionToken={sessionToken}/>

@@ -8,7 +8,7 @@ const PostDisplay = (props) => {
     const deletePost = (item) => {
 
         console.log(item.id)
-        fetch(`http://localhost:3000/post/delete/${item.id}`, {
+        fetch(`https://nationalparkopedia.herokuapp.com/post/delete/${item.id}`, {
             method: 'DELETE',
             headers: new Headers ({
                 'Content-Type': 'application/json',
