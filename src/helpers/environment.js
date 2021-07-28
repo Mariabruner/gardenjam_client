@@ -6,7 +6,7 @@ switch (window.location.hostname) {
     break;
 
     case 'nationalparkopediaclient.herokuapp.com':
-    APIURL = 'https://nationparkopediaclient.herokuapp.com'
+    APIURL = 'https://nationparkopedia.herokuapp.com'
 }
 
 export default APIURL;
