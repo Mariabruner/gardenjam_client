@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import PostDisplay from './PostDisplay';
 import PostCreate from './PostCreate'
-import Auth from '../../../auth/Auth'
-
-
+import EditPost from './EditPost'
 
 const ForumDisplay = (props) => {
     const [state, setState] = useState('');
     const [sessionToken, setSessionToken] = useState('');
+    const [posts, setPosts] = useState([])
+    const [updateActive, setUpdateActive] = useState(false)
+    const [postToUpdate, setPostToUpdate] = useState({})
 
-    const fetcher = () => {
+    const fetcher = async () => {
         fetch('http://localhost:3000/post/all')
             .then(res => {
                 if (res.status !== 200) {
@@ -27,8 +28,21 @@ const ForumDisplay = (props) => {
             .catch(err => console.log(err))
     }
 
-    useEffect(() => {
-        fetcher()
+    const editUpdatePost = (post) => {
+        setPostToUpdate(post)
+        console.log(post)
+    }
+
+    const updateOn = () => {
+        setUpdateActive(true)
+    }
+
+    const updateOff = () => {
+        setUpdateActive(false)
+    }
+
+    useEffect(async () => {
+        await fetcher()
     }, [])
 
     useEffect(() => {
@@ -48,11 +62,12 @@ const ForumDisplay = (props) => {
         setSessionToken('');
         window.location.href = '/'
     }
-
+    
     return (
         <div>
             <PostCreate fetchPosts={fetcher} sessionToken={sessionToken}/>
-            <PostDisplay post={state} />
+            <PostDisplay post={state} posts={posts} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPosts={fetcher} token={sessionToken}/>
+            {updateActive ? <EditPost postToUpdate={postToUpdate} updateOff={updateOff} token={sessionToken} fetchPosts={fetcher}/> : <></>}
         </div>
     )
 }

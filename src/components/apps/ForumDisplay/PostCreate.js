@@ -18,7 +18,6 @@ const PostCreate = (props) => {
             body: JSON.stringify({ post: {title: title, content: content, comments: comments, postName: postName}}),
             headers: new Headers({
                 'Content-Type' : 'application/json',
-                //need to include bearer token somehow
                 'Authorization' : `Bearer ${props.sessionToken}`
             })
         }).then((res) => res.json())
