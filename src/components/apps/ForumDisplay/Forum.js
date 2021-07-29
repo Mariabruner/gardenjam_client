@@ -34,7 +34,7 @@ const Forum = (props) => {
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3000/user/register", {
+        fetch(" https://nationalparkopedia.herokuapp.com/user/register", {
             method: 'POST',
             body: JSON.stringify({ user: { username: username, password: password } }),
             headers: new Headers({
