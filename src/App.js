@@ -6,11 +6,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Home from './components/Home'
 import ParksApp from './components/apps/ParksApp'
+import ForumDisplay from './components/apps/ForumDisplay/index'
 
 
 import Footer from './components/Footer'
 import {
-  BrowserRouter as Router
+  BrowserRouter as Router, Redirect, withRouter
 } from 'react-router-dom';
 
 function App() {
@@ -25,35 +26,31 @@ function App() {
   const updateToken = (newToken) => {
     localStorage.setItem('token', newToken);
     setSessionToken(newToken);
-    console.log(sessionToken);
+    
   }
 
   const clearToken = () => {
     localStorage.clear();
     setSessionToken('');
+    window.location.href='/'
   }
 
   const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? <Home token={sessionToken} />
+    return (sessionToken === localStorage.getItem('token') ? <ForumDisplay token={sessionToken} />
       : <Auth updateToken={updateToken} />)
   }
+
+
 
   return (
     <div className='App'>
     <div>
       <Router>
-        <Sitebar clickLogout={clearToken} />
-        </Router>
-        {protectedViews()}     
-        <Home></Home>
-        <ParksApp></ParksApp>
-
-
+        <Sitebar clickLogout={clearToken} /> 
+        </Router>     
+        {/* {protectedViews()}    */}
       </div>
-  
       <Footer />
-
-
     </div>
   );
 };
